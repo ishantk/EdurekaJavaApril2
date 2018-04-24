@@ -3,6 +3,7 @@ package co.edureka.main;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -78,10 +79,23 @@ public class Client {
 			}*/
 			
 			
-			for(int i=1;i<=100;i++){
+			/*for(int i=1;i<=100;i++){
 				Customer cus = new Customer(null,"Customer "+i,"cutsomer"+i+"@example.com","customer address"+i,27);
 				session.save(cus);
-			}
+			}*/
+			
+			
+			Customer cus1 = (Customer)session.get(Customer.class, 4);
+			Customer cus2 = (Customer)session.get(Customer.class, 4);
+			
+			System.out.println(cus1);
+			System.out.println(cus2);
+			
+			String hql = "From Customer";
+			Query query = session.createQuery(hql);
+			query.setCacheable(true);
+			
+			List<Customer> cutomers = query.list();
 			
 			transaction.commit();
 			

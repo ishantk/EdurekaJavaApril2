@@ -5,6 +5,8 @@
 
 <hibernate-mapping>
    <class name="co.edureka.model.Customer" table="CUSTOMER">
+   <cache usage="read-write"/>
+   
       <id name="id" column="CID">
          <generator class="increment"/>
       </id>
