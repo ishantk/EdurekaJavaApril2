@@ -1,13 +1,18 @@
 package co.edureka.model;
 
+// Model or Bean or POJO
 public class Settings {
 	
+	// attributes or properties
 	Integer volumeLevel;
 	Integer brightness;
 	String appName;
 	String primaryColor;
 	String author;
 	
+	public Settings() {
+		System.out.println("==Settings Object Constructed==");
+	}
 	
 	public Integer getVolumeLevel() {
 		return volumeLevel;
@@ -40,10 +45,19 @@ public class Settings {
 		this.author = author;
 	}
 	
+	// Life Cycle methods which can be any name
+	public void myInit(){
+		System.out.println("==myInit executed--");
+	}
+
+	public void myDestroy(){
+		System.out.println("==myDestroy executed--");
+	}
+	
 	@Override
 	public String toString() {
 		return "Settings [volumeLevel=" + volumeLevel + ", brightness=" + brightness + ", appName=" + appName
-				+ ", primaryColor=" + primaryColor + ", author=" + author + "]";
+				+ ", primaryColor=" + primaryColor + ", author=" + author + "]\n"+super.toString();
 	}
 	
 	

@@ -8,20 +8,63 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context-3.0.xsd">
     
-   <bean id="sRef1" class="co.edureka.model.Settings">
+   <!-- <bean id="sRef1" class="co.edureka.model.Settings" scope="prototype"> -->
+   <!-- <bean id="sRef1" class="co.edureka.model.Settings" init-method="myInit" destroy-method="myDestroy">
        <property name="volumeLevel" value="5"/>
        <property name="brightness" value="80"/>
        <property name="appName" value="WhatsApp"/>
        <property name="primaryColor" value="Teal"/>
        <property name="author" value="Facebook"/>
-   </bean>
+   </bean> -->
    
-    <bean id="sRef2" class="co.edureka.model.Settings">
+   <!-- <bean class="co.edureka.model.BeanProcessor"/> -->
+   
+    <!-- <bean id="sRef2" class="co.edureka.model.Settings">
        <property name="volumeLevel" value="9"/>
        <property name="brightness" value="37"/>
        <property name="appName" value="Isntagram"/>
        <property name="primaryColor" value="PrupleRedGradient"/>
        <property name="author" value="Facebook"/>
+   </bean> -->
+   
+   <!-- <bean id="fRef" class="co.edureka.model.Father">
+       <property name="fname" value="John"/>
+       <property name="lname" value="Watson"/>
+       <property name="money" value="100000"/>
    </bean>
-
+   
+    <bean id="cRef" class="co.edureka.model.Child" parent="fRef">
+       <property name="fname" value="Jennie"/>
+       <property name="vehicles" value="3"/>
+   </bean> -->
+   
+   <!--  <bean id="aRef" class="co.edureka.model.Address">
+       <property name="adrsLine" value="Country Homes"/>
+       <property name="city" value="Bengaluru"/>
+       <property name="state" value="Karnataka"/>
+       <property name="zipCode" value="520001"/>
+   </bean>
+   
+    <bean id="pRef" class="co.edureka.model.Person">
+       <property name="name" value="Jennie"/>
+       <property name="email" value="jennie@example.com"/>
+       <property name="age" value="30"/>
+       <property name="address" ref="aRef"/>   Use Setter
+       <constructor-arg ref="aRef"/>  Use Constructor
+       
+       <property name="certificates">  Use Setter
+       		<list>
+       			<value>AWS</value>
+       			<value>CCNA</value>
+       			<value>OCJP</value>
+       		</list>
+       </property>
+       
+   </bean>
+ -->
+ 
+ <bean id="ca" class="co.edureka.model.CA"/>
+ <bean id="cb" class="co.edureka.model.CB"/>
+ <context:annotation-config/>
+ 
 </beans>
